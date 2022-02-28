@@ -1,10 +1,7 @@
 let description = document.querySelector('.description');
-let overviewBtn = document.querySelector('.overview');
-let structureBtn = document.querySelector('.structure');
-let geologyBtn = document.querySelector('.geology');
-let venus = document.querySelector('.venus');
-let mercury = document.querySelector('.mercury');
-let index = 0;
+let planetIndex = 0
+const planetBtn = Array.from(document.querySelectorAll('.planet-btn'));
+const overviewBtn = Array.from(document.querySelectorAll('.overview-btn'));
 
 fetch('data.json').then(function (response) {
     return response.json();
@@ -12,26 +9,27 @@ fetch('data.json').then(function (response) {
     console.log(data);
     description.innerText = data[0].overview.content;
 
-    // Buttons to change planet
-    venus.addEventListener('click', () => {
-        index = 1;
-        description.innerText = data[1].overview.content
-    })
-    mercury.addEventListener('click', () => {
-        index = 0;
-        description.innerText = data[0].overview.content
+    planetBtn.forEach(button => {
+        button.addEventListener('click', (e) => {
+            planetIndex = planetBtn.indexOf(e.target);
+            button[planetIndex] = description.innerText = data[planetIndex].overview.content;
+        })
     })
 
-    // Buttons to switch between paragraphs
-    overviewBtn.addEventListener('click', () => {
-        description.innerText = data[index].overview.content;
+overviewBtn.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        let overviewIndex = overviewBtn.indexOf(event.target);
+        if (overviewIndex === 0) {
+            description.innerText = data[planetIndex].overview.content;
+        }
+        if (overviewIndex === 1) {
+            description.innerText = data[planetIndex].structure.content;
+        }
+        if (overviewIndex === 2) {
+            description.innerText = data[planetIndex].geology.content;
+        }
     })
-    structureBtn.addEventListener('click', () => {
-        description.innerText = data[index].structure.content;
-    })
-    geologyBtn.addEventListener('click', () => {
-       description.innerText = data[index].geology.content;
-    })
+})
 })
 
 
