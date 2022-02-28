@@ -1,7 +1,7 @@
-let description = document.querySelector('.description');
-let planetIndex = 0
 const planetBtn = Array.from(document.querySelectorAll('.planet-btn'));
 const overviewBtn = Array.from(document.querySelectorAll('.overview-btn'));
+let description = document.querySelector('.description');
+let planetIndex = 0
 
 fetch('data.json').then(function (response) {
     return response.json();
