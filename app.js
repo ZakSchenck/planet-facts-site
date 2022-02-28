@@ -16,20 +16,20 @@ fetch('data.json').then(function (response) {
         })
     })
 
-overviewBtn.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-        let overviewIndex = overviewBtn.indexOf(event.target);
-        if (overviewIndex === 0) {
-            description.innerText = data[planetIndex].overview.content;
-        }
-        if (overviewIndex === 1) {
-            description.innerText = data[planetIndex].structure.content;
-        }
-        if (overviewIndex === 2) {
-            description.innerText = data[planetIndex].geology.content;
-        }
+    overviewBtn.forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            let overviewIndex = overviewBtn.indexOf(event.target);
+            if (overviewIndex === 0) {
+                description.innerText = data[planetIndex].overview.content;
+            }
+            if (overviewIndex === 1) {
+                description.innerText = data[planetIndex].structure.content;
+            }
+            if (overviewIndex === 2) {
+                description.innerText = data[planetIndex].geology.content;
+            }
+        })
     })
-})
 })
 
 
