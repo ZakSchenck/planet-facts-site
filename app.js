@@ -16,25 +16,38 @@ fetch('data.json').then(function (response) {
     return response.json();
 }).then(function (data) {
     console.log(data);
-    description.innerText = data[0].overview.content;
-    source.innerText = data[0].overview.source;
-    planetImage.src = data[0].images.planet;
-    planetTitle.innerText = data[0].name;
-
-    rotationValue.innerText = data[0].rotation;
-    revolutionValue.innerText = data[0].revolution;
-    radiusValue.innerText = data[0].radius;
-    tempValue.innerText = data[0].temperature;
-
+    // Added active classlists when page loads
+    overviewBtn[0].classList.add('purpleBg');
+    planetBtn[2].classList.add('active');
+    // Earth information is displayed on load
+    description.innerText = data[2].overview.content;
+    source.innerText = data[2].overview.source;
+    planetImage.src = data[2].images.planet;
+    planetTitle.innerText = data[2].name;
+    rotationValue.innerText = data[2].rotation;
+    revolutionValue.innerText = data[2].revolution;
+    radiusValue.innerText = data[2].radius;
+    tempValue.innerText = data[2].temperature;
+    // Removes purple background class
     function removeActive() {
         overviewBtn.forEach(function (btn) {
             btn.classList.remove('purpleBg');
         });
     }
-    
+    // Removes active nav class
+    function removeActiveNav() {
+        planetBtn.forEach(button => {
+            button.classList.remove('active');
+        })
+    }
+    // Logic for switching information on click via Nav Items
     planetBtn.forEach(button => {
         button.addEventListener('click', (e) => {
             removeActive();
+            removeActiveNav();
+            overviewBtn[0].classList.add('purpleBg');
+            button.classList.add('active');
+
             planetIndex = planetBtn.indexOf(e.target);
             button[planetIndex] = description.innerText = data[planetIndex].overview.content;
             source.innerText = data[planetIndex].overview.source;
