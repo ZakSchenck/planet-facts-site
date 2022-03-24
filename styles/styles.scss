@@ -103,7 +103,7 @@ header {
     .image-container {
         position: relative;
         .planet-img {
-            max-width: 300px ;
+            max-width: 400px ;
             position: relative;
         }
         .overlay {
@@ -112,13 +112,20 @@ header {
             width: 150px;
         }
     }
+    .overview-btn {
+        font-family: 'Antonio', sans-serif;
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
     div {
         @include flexCenter(column);
         h1 {
             color: $textColorSecondary;
-            font-size: 45px;
+            font-size: 65px;
+            font-weight: 300px;
             text-transform: uppercase;
             margin-right: auto;
+            font-family: 'Antonio', sans-serif;
         }
         .description {
             margin-top: -20px;
