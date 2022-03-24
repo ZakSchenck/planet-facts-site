@@ -2,15 +2,18 @@ const planetBtn = Array.from(document.querySelectorAll('.planet-btn'));
 const overviewBtn = Array.from(document.querySelectorAll('.overview-btn'));
 const description = document.querySelector('.description');
 const source = document.querySelector('.source');
-const nav = document.querySelector('.nav');
 const planetImage = document.querySelector('.planet-img');
 const planetImageOverlay = document.querySelector('.planet-img__overlay');
-let planetTitle = document.querySelector('.planet-title');
-let rotationValue = document.querySelector('.rotation-value');
-let revolutionValue = document.querySelector('.revolution-value');
-let radiusValue = document.querySelector('.radius-value');
-let tempValue = document.querySelector('.temp-value');
-let planetIndex = 0
+const planetTitle = document.querySelector('.planet-title');
+const rotationValue = document.querySelector('.rotation-value');
+const revolutionValue = document.querySelector('.revolution-value');
+const radiusValue = document.querySelector('.radius-value');
+const tempValue = document.querySelector('.temp-value');
+let planetIndex = 2;
+const header = document.querySelector('.header');
+const nav = document.querySelector('.nav');
+const hamburger = document.querySelector('.hamburger');
+const planetButton = document.querySelectorAll('.planet-btn')
 
 fetch('data.json').then(function (response) {
     return response.json();
@@ -88,6 +91,20 @@ fetch('data.json').then(function (response) {
         })
     })
 })
+
+hamburger.addEventListener('click', () => {
+    nav.classList.toggle('navToggle');
+    header.classList.toggle('headerToggle');
+    planetBtn.forEach(btn => {
+        btn.classList.toggle('btnToggle')
+    })
+})
+
+
+
+    
+
+
 
 
 

@@ -2,8 +2,9 @@ body {
   background-color: #070724;
   color: #9ea0b4;
   font-family: 'Spartan', sans-serif;
-  overflow-x: hidden;
   margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 #bg-stars {
@@ -27,6 +28,7 @@ header {
   display: -ms-flexbox;
   display: flex;
   border-bottom: 2px solid #201c3c;
+  position: relative;
 }
 
 header h2 {
@@ -88,6 +90,34 @@ header nav li.active::after {
   width: 100%;
   -webkit-transition: .5s;
   transition: .5s;
+}
+
+header .hamburger {
+  width: 25px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  display: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+header .hamburger .bar {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+}
+
+header .hamburger:hover {
+  cursor: pointer;
 }
 
 .mainbody-container {
@@ -204,5 +234,148 @@ header nav li.active::after {
   font-size: 25px;
   margin-left: 20px;
   color: white;
+}
+
+.button-section {
+  width: 100%;
+}
+
+.type-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media all and (max-width: 950px) {
+  .mainbody-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 50px;
+    width: 90%;
+  }
+  .mainbody-container div {
+    margin: 0 auto 0 auto;
+  }
+  .image-container {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .image-container img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .information-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+  header {
+    top: 0;
+    z-index: 100;
+  }
+  header.headerToggle {
+    position: fixed;
+  }
+  .nav {
+    position: fixed;
+    top: 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    right: 0;
+    font-size: 20px;
+    background-color: #12023d;
+    width: 0;
+    height: 100%;
+    -webkit-transition: .7s;
+    transition: .7s;
+  }
+  .nav.navToggle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-transition: .7s;
+    transition: .7s;
+  }
+  .planet-btn {
+    font-size: 28px;
+    margin-bottom: 5px;
+    margin-top: 30px;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: .35s;
+    transition: .35s;
+  }
+  .planet-btn.btnToggle {
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  .information-section {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .information-section div {
+    width: 95%;
+  }
+  .button-section {
+    width: 95%;
+  }
+  .hamburger {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+}
+
+@media all and (max-width: 460px) {
+  .description-section {
+    max-width: 330px;
+  }
+  .source {
+    width: 275px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .image-container img {
+    width: 95%;
+  }
+}
+
+@media all and (max-width: 300px) {
+  .description-section {
+    max-width: 275px;
+  }
+  .button-section {
+    width: 200px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

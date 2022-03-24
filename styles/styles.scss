@@ -13,8 +13,8 @@ body {
     background-color: #070724;
     color: $textColorPrimary;
     font-family: 'Spartan', sans-serif;
-    overflow-x: hidden;
     margin: 0;
+    box-sizing: border-box;
 }
 
 #bg-stars {
@@ -29,6 +29,7 @@ header {
     width: 100%;
     @include flexCenter(row);
     border-bottom: 2px solid $borderColor;
+    position: relative;
     h2 {
         margin-top: 20px;
         margin-left: 25px;
@@ -69,6 +70,25 @@ header {
         width: 100%;
         transition: .5s;
     }
+  }
+  .hamburger {
+      width: 25px;
+      height: 20px;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      display: none;
+      justify-content: space-between;
+      flex-direction: column;
+      transform: translateY(-50%);
+      .bar {
+        width: 100%;
+        height: 4px;
+        background-color: white;
+      }
+      &:hover {
+          cursor: pointer;
+      }
   }
 }
 
@@ -147,3 +167,117 @@ header {
         }
     }
 }
+
+.button-section {
+    width: 100%;
+}
+
+.type-container {
+    display: flex;
+    flex-direction: row;
+}
+
+@media all and(max-width: 950px) {
+    .mainbody-container {
+        flex-direction: column;
+        gap: 50px;
+        width: 90%;
+    }
+    .mainbody-container div {
+        margin: 0 auto 0 auto;
+    }
+    .image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .image-container img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .information-section {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    header {
+        top: 0;
+        z-index: 100;
+    }
+    header.headerToggle {
+        position: fixed;
+    }
+    .nav {
+        position: fixed;
+        top: 50px;
+        flex-direction: column;
+        right: 0;
+        font-size: 20px;
+        background-color: rgb(18, 2, 61);
+        width: 0;
+        height: 100%;
+        transition: .7s;
+    }
+    .nav.navToggle {
+        display: flex;
+        width: 100%;
+        transition: .7s;
+    }
+    .planet-btn {
+        font-size: 28px;
+        margin-bottom: 5px;
+        margin-top: 30px;
+        opacity: 0;
+        pointer-events: none;
+        transition: .35s;
+    }
+    .planet-btn.btnToggle {
+        opacity: 1;
+        pointer-events: auto;
+        transition: 1s;
+    }
+    .information-section {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .information-section div {
+        width: 95%;
+    }
+    .button-section {
+        width: 95%;
+    }
+    .hamburger {
+        display: flex !important;
+    }
+}
+
+@media all and (max-width: 460px) {
+    .description-section {
+        max-width: 330px;
+    }
+    .source {
+        width: 275px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .image-container img {
+        width: 95%;
+    }
+}
+
+@media all and (max-width: 300px) {
+    .description-section {
+        max-width: 275px;
+    }
+    .button-section {
+        width: 200px;
+    }
+}
+
+
+
