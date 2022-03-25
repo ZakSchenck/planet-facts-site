@@ -96,9 +96,9 @@ header {
     @include flexCenter(row);
     margin-left: auto;
     margin-right: auto;
-    max-width: 800px;
+    max-width: 900px;
     gap: 150px;
-    margin-top: 100px;
+    margin-top: 30px;
     line-height: 25px;
     .image-container {
         position: relative;
@@ -114,14 +114,15 @@ header {
     }
     .overview-btn {
         font-family: 'Antonio', sans-serif;
-        font-size: 20px;
+        font-size: 18px;
         letter-spacing: 2px;
     }
     div {
         @include flexCenter(column);
+        max-width: 400px;
         h1 {
             color: $textColorSecondary;
-            font-size: 65px;
+            font-size: 70px;
             font-weight: 300px;
             text-transform: uppercase;
             margin-right: auto;
@@ -168,9 +169,10 @@ header {
             margin-left: 20px;
         }
         h1 {
-            font-size: 25px;
+            font-size: 30px;
             margin-left: 20px;
             color: $textColorSecondary;
+            font-family: 'Antonio', sans-serif;
         }
     }
 }
