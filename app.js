@@ -82,11 +82,13 @@ fetch('data.json').then(function (response) {
                 planetImageOverlay.style.display = 'none';
             }
             if (overviewIndex === 2) {
+                const overlay = document.querySelectorAll('.planet-img__overlay');
                 description.innerText = data[planetIndex].geology.content;
                 planetImage.src = data[planetIndex].images.planet
                 planetImageOverlay.src = data[planetIndex].images.geology;
                 planetImageOverlay.classList.add('overlay')
                 planetImageOverlay.style.display = 'block';
+                overlay.setAttribute("alt","surface image");
             }
         })
     })
