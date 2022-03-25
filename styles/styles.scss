@@ -37,12 +37,11 @@ header {
     }
     nav {
         margin-left: auto;
+    }
+    nav ul {
         list-style: none;
         @include flexCenter(row);
         height: 100%; 
-        ul {
-            list-style: none;
-        }
     li {
         margin-right: 25px;
         font-size: 12px;
@@ -185,7 +184,7 @@ header {
     flex-direction: row;
 }
 
-@media all and(max-width: 950px) {
+@media all and(max-width: 960px) {
     .mainbody-container {
         flex-direction: column;
         gap: 50px;
@@ -221,9 +220,9 @@ header {
     }
     .nav {
         position: fixed;
-        top: 50px;
+        top: 30px;
         flex-direction: column;
-        right: 0;
+        right: -40px;
         font-size: 20px;
         background-color: rgb(18, 2, 61);
         width: 0;

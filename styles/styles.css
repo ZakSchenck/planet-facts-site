@@ -39,6 +39,9 @@ header h2 {
 
 header nav {
   margin-left: auto;
+}
+
+header nav ul {
   list-style: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -53,18 +56,14 @@ header nav {
   height: 100%;
 }
 
-header nav ul {
-  list-style: none;
-}
-
-header nav li {
+header nav ul li {
   margin-right: 25px;
   font-size: 12px;
   text-transform: uppercase;
   position: relative;
 }
 
-header nav li::after {
+header nav ul li::after {
   content: '';
   position: absolute;
   bottom: -5px;
@@ -76,21 +75,21 @@ header nav li::after {
   transition: .5s;
 }
 
-header nav li:hover::after {
+header nav ul li:hover::after {
   width: 100%;
   -webkit-transition: .5s;
   transition: .5s;
 }
 
-header nav li:hover {
+header nav ul li:hover {
   cursor: pointer;
 }
 
-header nav li.active {
+header nav ul li.active {
   color: white;
 }
 
-header nav li.active::after {
+header nav ul li.active::after {
   width: 100%;
   -webkit-transition: .5s;
   transition: .5s;
@@ -259,7 +258,7 @@ header .hamburger:hover {
           flex-direction: row;
 }
 
-@media all and (max-width: 950px) {
+@media all and (max-width: 960px) {
   .mainbody-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -311,12 +310,12 @@ header .hamburger:hover {
   }
   .nav {
     position: fixed;
-    top: 50px;
+    top: 30px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    right: 0;
+    right: -40px;
     font-size: 20px;
     background-color: #12023d;
     width: 0;
