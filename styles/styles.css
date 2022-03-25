@@ -15,7 +15,7 @@ body {
 }
 
 header {
-  height: 50px;
+  height: 70px;
   width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -31,9 +31,10 @@ header {
   position: relative;
 }
 
-header h2 {
+header #logo {
   margin-top: 20px;
   margin-left: 25px;
+  font-family: 'Antonio', sans-serif;
   color: white;
 }
 

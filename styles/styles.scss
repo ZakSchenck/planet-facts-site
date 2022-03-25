@@ -25,14 +25,15 @@ body {
 }
 
 header {
-    height: 50px;
+    height: 70px;
     width: 100%;
     @include flexCenter(row);
     border-bottom: 2px solid $borderColor;
     position: relative;
-    h2 {
+    #logo {
         margin-top: 20px;
         margin-left: 25px;
+        font-family: 'Antonio', sans-serif;
         color: $textColorSecondary;
     }
     nav {
