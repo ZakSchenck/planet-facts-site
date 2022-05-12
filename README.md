@@ -5,7 +5,7 @@ Live Site: https://zakschenck.github.io/planet-facts-site/
 
 ## Description
 
-This is a Single Page Application displaying different tabs of information on each of the planets in our solar system. The goal of this project was to make my job a lot harder by building this without a frontend framework like React. This project is based off of a wireframe from Frontend Mentor. 
+This is a Single Page Application displaying different tabs of information on each of the planets in our solar system. The goal of this project was to make my job a lot harder by building this without a frontend framework like React. This project is based off of a wireframe from <a href="https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_f" target="_blank">Frontend Mentor</a>
 
 ### Tools Used
 
