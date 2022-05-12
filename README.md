@@ -1,7 +1,7 @@
 # Planet Facts Website 
 
 Live Site: https://zakschenck.github.io/planet-facts-site/
-<img width="650" alt="website image" src="https://user-images.githubusercontent.com/91504668/168119831-1237e79c-dfbf-49d8-af16-8083d81c268c.png">
+<img width="1000" alt="website image" src="https://user-images.githubusercontent.com/91504668/168119831-1237e79c-dfbf-49d8-af16-8083d81c268c.png">
 
 ## Description
 
